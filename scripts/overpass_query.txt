@@ -1,0 +1,10 @@
+[out:json][timeout:300];
+(
+  area["name"="Львів"]["admin_level"="8"]["place"="city"]->.lviv;
+);
+(
+  nwr["amenity"~"^(restaurant|cafe|bar|fast_food|pub|food_court|biergarten|ice_cream|nightclub|stripclub|social_centre)$"](area.lviv);
+  nwr["tourism"="nightclub"](area.lviv);
+  nwr["amenity"="takeaway"](area.lviv);
+);
+out geom;
